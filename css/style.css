@@ -10,8 +10,6 @@ body{
     width: 100%;
     height: 10rem;
     background: linear-gradient(to right, #bc8161, #f6cbab,#bb7d5c );
-
-    /* background-color: ; */
     text-align: center;
     position: fixed;
     box-shadow: 0 0 2rem white;
@@ -21,6 +19,7 @@ body{
     position: relative;
     left: 33rem;
     top: -5rem;
+    z-index: 1;
 }
 
 .header h1,h3{
@@ -40,14 +39,28 @@ body{
     margin: 0;
     color: #6B705C;
 }
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* <-- THIS line is magic */
+  z-index: 1;
+}
 
-.maincontent{
+
+.maincontent {
+    padding-top: 12rem; /* adjust for your header */
     width: 60%;
     background-color: #e5b89f;
-    height: 100vh;
+    min-height: 100vh; /* flexible instead of fixed */
     box-shadow: 0 0 1rem #946541;
     z-index: 5;
+    position: relative;
 }
+
+
 .bp1{
     position: absolute;
     top: 10rem;
@@ -61,19 +74,19 @@ body{
     right: 4rem;
     transform: rotate(30deg);
 }
-.bp3{
-    position: absolute;
-    top: 50rem;
-}
-.bp4{
-    position: absolute;
-    left: 4rem;
-    bottom: -5rem;
-}
+
 
 .cameraimg{
     position: relative;
     top: 32rem;
     left: -12rem;
 }
+
+.fileinput{
+    position: relative;
+    top: 25rem;
+    left: 10rem;
+    z-index: 10;
+}
+
 
