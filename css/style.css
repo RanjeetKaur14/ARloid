@@ -45,21 +45,20 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* <-- THIS line is magic */
+  pointer-events: none; 
   z-index: 1;
 }
 
 
 .maincontent {
-    padding-top: 12rem; /* adjust for your header */
+    padding-top: 12rem; 
     width: 60%;
     background-color: #e5b89f;
-    min-height: 100vh; /* flexible instead of fixed */
+    min-height: 100vh; 
     box-shadow: 0 0 1rem #946541;
     z-index: 5;
     position: relative;
 }
-
 
 .bp1{
     position: absolute;
