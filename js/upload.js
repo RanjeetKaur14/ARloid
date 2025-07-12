@@ -1,5 +1,5 @@
 // upload.js
-import { db } from 'firebase/firebase.js';
+import { db } from '../firebase/firebase.js';
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 window.uploadMemory = async function () {
