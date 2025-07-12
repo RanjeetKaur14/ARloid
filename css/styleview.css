@@ -1,1 +1,101 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background: url('assets/viewbackground.png') center/cover no-repeat;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cursive{
+    position: relative;
+    top: -0.6rem;
+}
+
+.heading{
+    
+    margin-left: 4rem;
+    color: rgba(250, 235, 215, 0.771);
+    align-self: flex-start;
+}
+
+.memory-container {
+    display: flex;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem rgba(244, 240, 240, 0.522);
+    max-width: 80vw;
+    gap: 2rem;
+    position: absolute;
+    left: 10rem;
+}
+
+.polaroid img {
+    max-width: 30rem;
+    max-height: 20rem;
+    padding: 2rem 1rem 4rem 1rem;
+    background-color: rgb(212, 191, 165);
+    border-radius: 0.2rem;
+    
+}
+.outercontent{
+    max-width: 30rem;
+    background-color: rgba(153, 221, 184, 0.2);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    right: 15rem;
+    width: 30rem;
+    height: 20rem;
+    box-shadow: 0 0 1rem rgba(153, 221, 184, 0.2);
+}
+.content {
+    background-color: rgb(99, 131, 99);
+    height: 100%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.2rem;
+    color: #fefae0;
+    line-height: 1.5rem; 
+    overflow: auto;
+    
+}
+
+.content p{
+    margin-left: 1rem;
+}
+
+.back-btn{
+    position: absolute;
+    bottom: -3rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(to right,#2f6c8a , #3e87a0);
+    color: white;
+    font-weight: bold;
+    right: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.back-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.742);
+}
+.content::-webkit-scrollbar{
+    width: 1rem;
+}
+
+.content::-webkit-scrollbar-track {
+  background:transparent;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #acca938a;
+  border-radius: 2rem;
+}
+.content::-webkit-scrollbar-thumb:hover {
+  background: #84aaa5;
+}   
+
 
