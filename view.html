@@ -7,61 +7,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <title>View Memory – ARloid</title>
-<!--   <link rel="stylesheet" href="css/styleview.css" /> -->
-  <style>
-    .memory-container {
-      margin-top: 50px;
-    }
-
-    .polaroid {
-      width: 300px;
-      background: white;
-      padding: 10px 10px 30px;
-      border: 2px solid #ff69b4;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      margin: auto;
-      font-family: 'Tinos', serif;
-      border-radius: 10px;
-    }
-
-    .polaroid img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .caption {
-      margin-top: 10px;
-      color: #4a004a;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-
-    .back-btn {
-      margin-top: 30px;
-      background: #ff69b4;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 15px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .back-btn:hover {
-      background: #ff1493;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/styleview.css" />
 </head>
 <body>
-  <h1>🎞 Your Polaroid Memory</h1>
+  <div class="heading">
+    <h1 class="cursive" style="display: inline-block; font-family: 'Ballet', cursive; font-weight: 400; font-size: 3.5rem;" > Y </h1>
+    <h1 class="normal" style="display: inline-block; font-family: 'Unna', serif; font-weight: 400; font-size: 3.5rem;">our &nbsp; </h1>
+    <h1 class="cursive" style="display: inline-block; font-family: 'Ballet', cursive; font-weight: 400; font-size: 3.5rem;" > P</h1>
+    <h1 class="normal" style="display: inline-block; font-family: 'Unna', serif; font-weight: 400; font-size: 3.5rem;">olaroid &nbsp;  </h1>
+    <h1 class="cursive" style="display: inline-block; font-family: 'Ballet', cursive; font-weight: 400; font-size: 3.5rem;" > M</h1>
+    <h1 class="normal" style="display: inline-block; font-family: 'Unna', serif; font-weight: 400; font-size: 3.5rem;">emory </h1>
+  </div>
+
   <div class="memory-container">
     <div class="polaroid" id="memoryCard">
       <img src="" id="memoryImg" alt="Uploaded Memory" />
-      <p class="caption" id="memoryCaption"></p>
     </div>
-    <button class="back-btn" onclick="goBack()">⬅ Back to Upload</button>
   </div>
-
+  <div class="outercontent">
+    <div class="content">
+      <p class="caption" id="memoryCaption"></p>
+      <button class="back-btn" onclick="goBack()">⬅ Back to Upload</button>
+    </div>
+  </div>
   <script type="module">
     import { db } from './firebase/firebase.js';
     import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
