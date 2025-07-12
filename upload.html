@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ARloid-Leave a Memory</title>
+</head>
+<body>
+    <div class="header">
+        <h1>ARloid</h1>
+        <h3>Capture a Moment, Leave a Memory</h3>
+        <img src="assets/headerimg1.png" alt="headerimg">
+    </div>
+
+    <div class="background">
+        <div class="bp1"><img src="assets/backgroundpic1-removebg-preview.png" alt="background-picture1"></div>
+        <div class="bp2"><img src="assets/backgroundpic2-removebg-preview.png" alt="background-picture2"></div>
+    </div>
+
+    <div class="maincontent">
+        
+        <div class="fileinput">
+            <!-- File and Caption Inputs -->
+            <input type="file" id="fileInput">
+            <input type="text" id="caption" placeholder="Enter a caption">
+            <button onclick="uploadMemory()">Upload</button>
+
+            <!-- Script to Upload and Save to Firestore -->
+            <script type="module">
+                import { db } from './firebase.js';
+                import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+                async function uploadMemory() {
+                const file = document.getElementById("fileInput").files[0];
+                const caption = document.getElementById("caption").value;
+
+
+                if (!file || !caption) {
+                alert("Please upload a file and write a caption.");
+                return;
+                }
+
+                // Upload to Cloudinary
+                const formData = new FormData();
+                formData.append("file", file);
+                formData.append("upload_preset", "ml_default"); // Your unsigned preset
+
+                const res = await fetch("https://api.cloudinary.com/v1_1/dv9vum0vn/image/upload", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await res.json();
+                const imageURL = data.secure_url;
+
+                // Save imageURL and caption in Firebase Firestore
+                const docRef = await addDoc(collection(db, "memories"), {
+                    url: imageURL,
+                    caption: caption,
+                    createdAt: new Date()
+                });
+
+                // Redirect to view.html with doc ID
+                window.location.href = `view.html?id=${docRef.id}`;
+
+            }
+            </script>       
+        </div>
+      
+        <div class="cameraimg">
+            <img src="assets/maincontent1.png" alt="maincontent1">
+        </div>
+
+    </div>
+        
+    <div class="footer"></div>
+    
+</body>
+</html>
 
