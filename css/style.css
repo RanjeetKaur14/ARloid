@@ -1,6 +1,6 @@
 body{
   height: 100vh;
-  background: url('assets/uploadbackground.png') center/cover no-repeat;
+  background: url('../assets/uploadbackground.png') center/cover no-repeat;
   display: flex;
   /* flex-direction: column; */
   justify-content: center;
