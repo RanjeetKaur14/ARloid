@@ -12,74 +12,24 @@
 </head>
 <body>
     <div class="header">
-        <h1>ARloid</h1>
-        <h3>Capture a Moment, Leave a Memory</h3>
-        <img src="assets/headerimg1.png" alt="headerimg">
+        <h1>Upload your Memory &lt;3</h1>
     </div>
-
-    <div class="background">
-        <div class="bp1"><img src="assets/backgroundpic1-removebg-preview.png" alt="background-picture1"></div>
-        <div class="bp2"><img src="assets/backgroundpic2-removebg-preview.png" alt="background-picture2"></div>
-    </div>
-
+    
     <div class="maincontent">
-        
         <div class="fileinput">
-            <!-- File and Caption Inputs -->
-            <input type="file" id="fileInput">
-            <input type="text" id="caption" placeholder="Enter a caption">
-            <button onclick="uploadMemory()">Upload</button>
-
-            <!-- Script to Upload and Save to Firestore -->
-            <script type="module">
-                import { db } from './firebase.js';
-                import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-                async function uploadMemory() {
-                const file = document.getElementById("fileInput").files[0];
-                const caption = document.getElementById("caption").value;
-
-
-                if (!file || !caption) {
-                alert("Please upload a file and write a caption.");
-                return;
-                }
-
-                // Upload to Cloudinary
-                const formData = new FormData();
-                formData.append("file", file);
-                formData.append("upload_preset", "ml_default"); // Your unsigned preset
-
-                const res = await fetch("https://api.cloudinary.com/v1_1/dv9vum0vn/image/upload", {
-                    method: "POST",
-                    body: formData
-                });
-
-                const data = await res.json();
-                const imageURL = data.secure_url;
-
-                // Save imageURL and caption in Firebase Firestore
-                const docRef = await addDoc(collection(db, "memories"), {
-                    url: imageURL,
-                    caption: caption,
-                    createdAt: new Date()
-                });
-
-                // Redirect to view.html with doc ID
-                window.location.href = `view.html?id=${docRef.id}`;
-
-            }
-            </script>       
+            <input type="file" id="fileInput" />
+            <input type="text" id="caption" placeholder="Enter a caption" />
+            <button onclick="uploadMemory()">Upload Memory</button>
         </div>
-      
-        <div class="cameraimg">
-            <img src="assets/maincontent1.png" alt="maincontent1">
-        </div>
-
-    </div>
         
-    <div class="footer"></div>
+    </div>
+    
+    <div class="footer">
+        <p>Made with 💖 by Team ARloid</p>
+    </div>
+    
+    <script type="module" src="./firebase.js"></script>
+    <script type="module" src="./upload.js"></script>        
     
 </body>
 </html>
-
