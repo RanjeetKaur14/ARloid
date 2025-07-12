@@ -44,3 +44,65 @@ body{
   width: 100%;
   text-align: center;
 }
+.fileinput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.fileinput input[type="file"],
+.fileinput input[type="text"] {
+  width: 250px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Tinos', serif;
+  background-color: #fff0f5;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.fileinput input[type="text"]{
+  height: 80px;
+  text-wrap: wrap;
+}
+.fileinput button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(to right, #ff85b3, #ffc3a0);
+  color: white;
+  font-weight: bold;
+  font-family: 'Tinos', serif;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fileinput button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+#fileInput button{
+  appearance: none;
+  background-color: #ff85b3;
+  
+}
+textarea {
+  width: 250px;
+  height: 100px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Tinos', serif;
+  background-color: #fff0f5;
+  resize: vertical; /* allows user to resize vertically */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
