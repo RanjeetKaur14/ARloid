@@ -3,18 +3,23 @@
     "public": ".",
     "ignore": [
       "firebase.json",
-      "/.*",
-      "/node_modules/"
+      "**/.*",
+      "**/node_modules/**"
     ],
     "rewrites": [
+      {
+        "source": "/upload",
+        "destination": "/upload.html"
+      },
       {
         "source": "/view",
         "destination": "/view.html"
       },
       {
-        "source": "",
+        "source": "**",
         "destination": "/index.html"
       }
     ]
   }
 }
+
