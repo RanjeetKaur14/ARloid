@@ -13,12 +13,14 @@
 <body>
     <div class="header">
         <h1>Upload your Memory &lt;3</h1>
+        
     </div>
     
     <div class="maincontent">
         <div class="fileinput">
             <input type="file" id="fileInput" />
             <textarea id="caption" placeholder="Enter a caption..."></textarea>
+
             <button onclick="uploadMemory()">Upload Memory</button>
         </div>
         
@@ -27,9 +29,10 @@
     <div class="footer">
         <p>Made with 💖 by Team ARloid</p>
     </div>
-    
-    <script type="module" src="firebase/firebase.js"></script>
-    <script type="module" src="js/upload.js"></script>        
+
+    <!-- Firebase + Upload Logic -->
+    <script type="module" src="./firebase.js"></script>
+    <script type="module" src="./upload.js"></script>        
     
 </body>
 </html>
