@@ -17,7 +17,7 @@
 
     .hero {
       height: 100vh;
-      background: url('assets/headerimg1.png') center/cover no-repeat;
+      background: url('assets/background.png') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -43,6 +43,8 @@
       font-size: 5rem;
       font-family: "Ephesis", cursive;
       margin-bottom: 0.5rem;
+      margin-top: 0;
+      font-weight: 300;
     }
 
     h3 {
@@ -63,16 +65,36 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      background-color: #ff9966;
+      background-color: #c39883;
       color: white;
       font-weight: bold;
       transition: 0.3s;
     }
 
     .hero-buttons button:hover {
-      background-color: #ff5e3a;
+      background-color: #e99582;
       transform: scale(1.05);
     }
+
+    .typewriter {
+    
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #FFE8D1;
+    width: 0;
+    animation: typing 2.8s steps(25) 1s forwards, blink 0.7s step-end infinite;
+    color: #FFE8D1;
+    }
+
+    @keyframes typing {
+    from { width: 0 }
+    to { width: 35ch } 
+    }
+
+    @keyframes blink {
+    50% { border-color: transparent }
+    }
+
   </style>
 </head>
 <body>
@@ -80,7 +102,7 @@
     <div class="overlay"></div>
     <div class="hero-content">
       <h1>ARloid</h1>
-      <h3>Capture a Moment, Leave a Memory</h3>
+      <h3 class="typewriter">Capture a Moment, Leave a Memory...</h3>
       <div class="hero-buttons">
         <button onclick="location.href='upload.html'">Upload Memory</button>
         <button onclick="location.href='view.html'">View Memories</button>
