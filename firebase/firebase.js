@@ -6,7 +6,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyBgbizuirtNwZvOuflvLd66tw-lzLZ1Hmo",
   authDomain: "polaroid-ar-memory.firebaseapp.com",
   projectId: "polaroid-ar-memory",
-  storageBucket: "polaroid-ar-memory.appspot.com", // ✅ Corrected
+  storageBucket: "polaroid-ar-memory.appspot.com", 
   messagingSenderId: "285625088296",
   appId: "1:285625088296:web:0fc4f69380879df2c2b81d",
   measurementId: "G-5STLG9BYYJ"
