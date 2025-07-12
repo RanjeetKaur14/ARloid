@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Memory – ARloid</title>
+  <link rel="stylesheet" href="css/styleview.css" />
+  <style>
+    .memory-container {
+      margin-top: 50px;
+    }
 
+    .polaroid {
+      width: 300px;
+      background: white;
+      padding: 10px 10px 30px;
+      border: 2px solid #ff69b4;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      margin: auto;
+      font-family: 'Tinos', serif;
+      border-radius: 10px;
+    }
+
+    .polaroid img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .caption {
+      margin-top: 10px;
+      color: #4a004a;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      background: #ff69b4;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .back-btn:hover {
+      background: #ff1493;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎞 Your Polaroid Memory</h1>
+  <div class="memory-container">
+    <div class="polaroid" id="memoryCard">
+      <img src="" id="memoryImg" alt="Uploaded Memory" />
+      <p class="caption" id="memoryCaption"></p>
+    </div>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Upload</button>
+  </div>
+
+  <script type="module">
+    import { db } from 'js/firebase.js';
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    // Extract document ID from URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    async function loadMemory() {
+      if (!id) {
+        alert("No memory ID found in the URL.");
+        return;
+      }
+
+      const docRef = doc(db, "memories", id);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        document.getElementById("memoryImg").src = data.url;
+        document.getElementById("memoryCaption").innerText = data.caption;
+      } else {
+        alert("Memory not found.");
+      }
+    }
+    loadMemory();
+
+    window.goBack= function() {
+      window.location.href = "./index.html";
+    }
+  </script>
+</body>
+</html>
