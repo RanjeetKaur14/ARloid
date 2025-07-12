@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mind AR Polaroid</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; padding: 30px; }
+    #result { font-size: 20px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Mind AR: Mood to Polaroid</h1>
+  <form id="uploadForm">
+    <input type="file" name="image" id="image" accept="image/*" required>
+    <button type="submit">Analyze Mood</button>
+  </form>
+
+  <div id="result">Detected mood: N/A</div>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      result.textContent = "Detecting mood...";
+
+      const res = await fetch('/analyze', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await res.json();
+      if (data.mood) {
+        result.textContent = `Detected mood: ${data.mood.toUpperCase()}`;
+        // 👉 You can now use this mood to change the Polaroid theme or suggest stickers
+      } else {
+        result.textContent = "No mood detected.";
+      }
+    });
+  </script>
+
+</body>
+</html>
 
