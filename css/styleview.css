@@ -11,7 +11,7 @@ body {
 
 .heading {
   position: absolute;
-  top: 2rem;
+  top: 0rem;
   left: 4rem;
   color: rgba(250, 235, 215, 0.85);
 }
@@ -54,9 +54,9 @@ body {
 }
 
 .content {
-  background-color: rgba(99, 131, 99, 0.85);
+  background-color: rgba(122, 162, 122, 0.652);
   height: 100%;
-  font-family: 'Shadows Into Light', cursive;
+  font-family:"Quicksand", sans-serif;
   font-size: 1.2rem;
   color: #fffef3;
   line-height: 1.8rem;
@@ -107,4 +107,22 @@ body {
 
 .content::-webkit-scrollbar-thumb:hover {
   background: #84aaa5;
+}
+
+.logo {
+    position: fixed;
+    width: 8rem;
+    height: 8rem;
+    bottom: 1rem;
+    margin-left: 3rem;
+    left: 1rem;
+    /* box-shadow:  0 0 2rem rgba(217, 220, 59, 0.419); */
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}   
+
+.logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(255, 255, 200, 0.6);
+  filter: brightness(1.1) drop-shadow(0 0 10px rgba(255, 255, 160, 0.8));
 }
