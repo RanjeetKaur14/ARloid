@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ARloid - Leave a Memory</title>
+    <title>Memory Mosaic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&family=Tinos:wght@400;700&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/logo.jpg">
   <style>
     body, html {
       margin: 0;
@@ -94,7 +95,16 @@
     @keyframes blink {
     50% { border-color: transparent }
     }
-
+    .footer{
+    margin-top: 5rem;
+    position: absolute;
+    bottom: 0rem;
+    background-color: rgba(255, 241, 241, 0.13);
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    }
+    
   </style>
 </head>
 <body>
@@ -108,6 +118,9 @@
         <button onclick="location.href='view.html'">View Memories</button>
       </div>
     </div>
+      <div class="footer">
+        <p>Made with 💖 by Team Coffee_Overflow</p>
+      </div>
   </div>
 </body>
 </html>
