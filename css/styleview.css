@@ -1,7 +1,7 @@
 body{
     margin: 0;
     height: 100vh;
-    background: url('assets/viewbackground.png') center/cover no-repeat;
+    background: url('../assets/viewbackground.png') center/cover no-repeat;
     display: flex;
     overflow: hidden;
     flex-wrap: wrap;
