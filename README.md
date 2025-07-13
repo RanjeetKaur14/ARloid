@@ -45,7 +45,7 @@ This project also aligns with the **Humane Tech** track by avoiding intrusive de
 - HTML5, CSS3, JavaScript
 - Firebase (Realtime Database and Hosting)
 - Google Fonts
-- GitHub & CodeBerg for version control
+- GitHub for version control
 
 ---
 
