@@ -6,6 +6,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.png">
   <title>View Memory – MemoryMosaic</title>
   <link rel="stylesheet" href="css/styleview.css" />
 </head>
@@ -29,6 +31,9 @@
       <p class="caption" id="memoryCaption"></p>
       <button class="back-btn" onclick="goBack()">⬅ Back to Upload</button>
     </div>
+  </div>
+  <div class="logo">
+        <a href="index.html" ><img  src="assets/logo.jpg" alt="logo" class="logo"></a>
   </div>
   <script type="module">
     import { db } from './firebase/firebase.js';
@@ -58,7 +63,7 @@
     loadMemory();
 
     window.goBack= function() {
-      window.location.href = "./index.html";
+      window.location.href = "./upload.html";
     }
   </script>
 </body>
