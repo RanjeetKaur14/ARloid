@@ -58,8 +58,8 @@ This project also aligns with the **Humane Tech** track by avoiding intrusive de
 
    ```
    TEAM MEMBERS:
-   RANJEET KAUR
-   LAVANYA TOMAR
+   RANJEET KAUR,
+   LAVANYA TOMAR,
    PALAK HARBOLA
 
    JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY
